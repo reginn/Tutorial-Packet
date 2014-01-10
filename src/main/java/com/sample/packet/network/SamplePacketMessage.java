@@ -1,4 +1,4 @@
-package com.sample.packet.com.sample.packet.network;
+package com.sample.packet.network;
 
 import io.netty.buffer.ByteBuf;
 

@@ -1,6 +1,5 @@
-package com.sample.packet.com.sample.packet.network;
+package com.sample.packet.network;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

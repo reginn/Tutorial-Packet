@@ -1,4 +1,4 @@
-package com.sample.packet.com.sample.packet.network;
+package com.sample.packet.network;
 
 import cpw.mods.fml.common.network.FMLIndexedMessageToMessageCodec;
 import io.netty.buffer.ByteBuf;

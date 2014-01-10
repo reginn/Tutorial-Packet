@@ -1,13 +1,10 @@
-package com.sample.packet.com.sample.packet.network;
+package com.sample.packet.network;
 
 
-import cpw.mods.fml.common.ModContainer;
 import cpw.mods.fml.common.network.FMLEmbeddedChannel;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.network.internal.HandshakeCompletionHandler;
 import cpw.mods.fml.relauncher.Side;
-import net.minecraftforge.common.network.DimensionMessageHandler;
-import net.minecraftforge.common.network.ForgeRuntimeCodec;
 
 import java.util.EnumMap;
 
