@@ -1,7 +1,6 @@
 package com.sample.packet.button;
 
 import com.sample.gui.container.ContainerBasic;
-import com.sample.packet.button.network.GuiButtonPacket;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.GuiButton;

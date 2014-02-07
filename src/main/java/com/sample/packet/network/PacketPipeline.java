@@ -1,4 +1,4 @@
-package com.sample.packet.button.network;
+package com.sample.packet.network;
 
 import com.google.common.collect.Lists;
 import cpw.mods.fml.common.FMLCommonHandler;

@@ -1,5 +1,6 @@
-package com.sample.packet.button.network;
+package com.sample.packet.button;
 
+import com.sample.packet.network.AbstractPacket;
 import cpw.mods.fml.common.FMLLog;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;

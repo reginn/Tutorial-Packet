@@ -1,4 +1,4 @@
-package com.sample.packet.button.network;
+package com.sample.packet.network;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
