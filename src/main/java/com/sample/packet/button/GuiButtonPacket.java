@@ -5,6 +5,7 @@ import cpw.mods.fml.common.FMLLog;
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.util.ChatComponentTranslation;
 
 public class GuiButtonPacket extends AbstractPacket
 {
@@ -55,6 +56,6 @@ public class GuiButtonPacket extends AbstractPacket
 	@Override
 	public void handleServerSide(EntityPlayer player)
 	{
-		FMLLog.info("Pressed " + String.valueOf(buttonId) + " Button");
+		player.addChatMessage(new ChatComponentTranslation("Pressed " + String.valueOf(buttonId) + " Button"));
 	}
 }
