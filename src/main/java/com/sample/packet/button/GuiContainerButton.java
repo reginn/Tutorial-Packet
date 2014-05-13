@@ -1,6 +1,5 @@
 package com.sample.packet.button;
 
-import com.sample.gui.container.ContainerBasic;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.GuiButton;
@@ -17,7 +16,7 @@ public class GuiContainerButton extends GuiContainer
 
 	public GuiContainerButton(InventoryPlayer inventoryPlayer)
 	{
-		super(new ContainerBasic(inventoryPlayer));
+		super(new ContainerButton(inventoryPlayer));
 
 		this.xSize = 176;
 		this.ySize = 166;
