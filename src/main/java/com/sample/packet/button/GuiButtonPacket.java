@@ -1,22 +1,15 @@
 package com.sample.packet.button;
 
-import com.sample.packet.network.AbstractPacket;
-import cpw.mods.fml.common.FMLLog;
+import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandlerContext;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.ChatComponentTranslation;
 
-public class GuiButtonPacket extends AbstractPacket
+public class GuiButtonPacket implements IMessage
 {
 	/*
 	 *今回パケットで扱うデータ
 	 */
-	private int buttonId;
+	private byte buttonId;
 
-	/*
-	 * PacketPipelineのencodeでnewInstance()するため, 引数なしコンストラクタが必要.
-	 */
 	public GuiButtonPacket()
 	{
 	}
@@ -26,36 +19,34 @@ public class GuiButtonPacket extends AbstractPacket
 	 */
 	public GuiButtonPacket(int _buttonId)
 	{
-		this.buttonId = _buttonId;
-	}
-
-	@Override
-	public void encodeInto(ChannelHandlerContext ctx, ByteBuf buffer)
-	{
-		buffer.writeInt(buttonId);
-	}
-
-	@Override
-	public void decodeInto(ChannelHandlerContext ctx, ByteBuf buffer)
-	{
-		buttonId = buffer.readInt();
+		this.buttonId = (byte)_buttonId;
 	}
 
 	/*
-	 * クライアント側のパケット処理を実行するメソッド
+	 * パケットのバイト列からデータを読みとる.
 	 */
 	@Override
-	public void handleClientSide(EntityPlayer player)
+	public void fromBytes(ByteBuf buffer)
 	{
-		// 今回は何もしない
+		buttonId = buffer.readByte();
 	}
 
 	/*
-	 * サーバー側のパケット処理を実行するメソッド
+	 * パケットのバイト列へデータを書き込む.
 	 */
 	@Override
-	public void handleServerSide(EntityPlayer player)
+	public void toBytes(ByteBuf buffer)
 	{
-		player.addChatMessage(new ChatComponentTranslation("Pressed " + String.valueOf(buttonId) + " Button"));
+		buffer.writeByte(buttonId);
 	}
+
+	/*
+	 * PacketHandlerでパケットのデータを参照するためのメソッド.
+	 * 必要に応じてgetter, setter, 他を用意する.
+	 */
+	public byte getButtonId()
+	{
+		return buttonId;
+	}
+
 }

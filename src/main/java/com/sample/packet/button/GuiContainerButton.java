@@ -61,6 +61,14 @@ public class GuiContainerButton extends GuiContainer
 			return;
 		}
 
-		SampleGuiButtonCore.packetPipeline.sendPacketToServer(new GuiButtonPacket(guiButton.id));
+		/*
+		 * クライアントからサーバーにパケットを送る場合のメソッド.
+		 * これ以外の以下すべてはサーバーからクライアントに送る場合のメソッド.
+		 * sendTo : 特定プレイヤーにパケットを送る
+		 * sendToAll : 全てのプレイヤーにパケットを送る
+		 * sendToAllAround : 一定範囲内のプレイヤー全てにパケットを送る.
+		 * sendToDimension : 特定ディメンション内のプレイヤー全てにパケットを送る
+		 */
+		SampleGuiButtonCore.packetDispatcher.sendToServer(new GuiButtonPacket(guiButton.id));
 	}
 }

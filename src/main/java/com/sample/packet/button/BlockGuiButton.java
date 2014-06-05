@@ -1,6 +1,5 @@
 package com.sample.packet.button;
 
-import com.sample.gui.container.SampleGuiContainerCore;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.EntityPlayer;
